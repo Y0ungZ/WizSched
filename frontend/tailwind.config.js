@@ -11,6 +11,7 @@ export default {
       navy: '#000AB2',
       gray: '#D4D0C7',
       black: '#292929',
+      white: '#FFFEFF',
     },
     fontFamily: {
       default: ['ChosunGu', 'sans-serif'],
