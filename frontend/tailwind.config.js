@@ -11,7 +11,8 @@ export default {
       navy: '#000AB2',
       gray: '#D4D0C7',
       black: '#292929',
-      white: '#FFFEFF',
+      white: '#FFFFFF',
+      'google-blue': '#4285F4',
     },
     fontFamily: {
       default: ['ChosunGu', 'sans-serif'],
