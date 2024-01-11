@@ -13,12 +13,12 @@ module.exports = {
   parser: '@typescript-eslint/parser',
   plugins: ['react-refresh', 'import'],
   settings: {
-    "import/parsers": {
-      "@typescript-eslint/parser": [".ts", ".tsx"]
+    'import/parsers': {
+      '@typescript-eslint/parser': ['.ts', '.tsx'],
     },
-    "import/resolver": {
+    'import/resolver': {
       typescript: {},
-      node: {}
+      node: {},
     },
   },
   rules: {
@@ -34,11 +34,10 @@ module.exports = {
         groups: ['builtin', 'external', 'internal', 'parent', 'sibling', 'index', 'object', 'type'],
         alphabetize: {
           order: 'asc',
-          caseInsensitive:true
+          caseInsensitive: true,
         },
         'newlines-between': 'never',
       },
     ],
   },
 };
-
