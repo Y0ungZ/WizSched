@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import OutlinedButton from '@/components/button/OutlinedButton';
+import Button from '@/components/button/Button';
 import { ROUTE_PATH } from '@/constants/path';
 
 const Header = () => {
@@ -12,7 +12,9 @@ const Header = () => {
       </Link>
       <div className="mx-5">
         <Link to={ROUTE_PATH.LOGIN}>
-          <OutlinedButton text="로그인" />
+          <Button variant="contained" color="secondary">
+            로그인
+          </Button>
         </Link>
       </div>
     </div>
