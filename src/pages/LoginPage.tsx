@@ -1,4 +1,4 @@
-import googleLogo from '@/assets/image/google-logo.svg';
+// import googleLogo from '@/assets/image/google-logo.svg';
 
 const LoginPage = () => {
   return (
