@@ -1,13 +1,8 @@
-import { Session } from '@supabase/supabase-js';
-import { useState } from 'react';
 import supabase from '@/api/supabaseClient';
 
 const useSupabaseAuth = (): AuthProps => {
-  const [user, setUser] = useState<Session | null>(null);
-  const [error, setError] = useState<Error | null>(null);
-
   const logInWithGoogle = async () => {
-    const { data, error } = await supabase.auth.signInWithOAuth({
+    await supabase.auth.signInWithOAuth({
       provider: 'google',
       options: {
         queryParams: {
@@ -16,24 +11,18 @@ const useSupabaseAuth = (): AuthProps => {
         },
       },
     });
-
-    if (data) {
-      const { data } = await supabase.auth.getSession();
-      setUser(data.session);
-    }
-
-    if (error) {
-      setError(error);
-    }
   };
 
-  return { user, error, logInWithGoogle };
+  const logOutWithGoogle = async () => {
+    await supabase.auth.signOut();
+  };
+
+  return { logInWithGoogle, logOutWithGoogle };
 };
 
 interface AuthProps {
-  user: Session | null;
-  error: Error | null;
   logInWithGoogle: () => Promise<void>;
+  logOutWithGoogle: () => Promise<void>;
 }
 
 export default useSupabaseAuth;
