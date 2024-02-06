@@ -3,7 +3,7 @@ import Button from '@/components/button/Button';
 
 const UserProfileSection = ({ user }: UserProfileSectionProps) => {
   return (
-    <section className="flex w-full flex-row justify-around">
+    <section className="flex w-full flex-row items-center justify-around">
       <div className="flex flex-col p-4">
         <img
           className="m-auto h-20 w-20 rounded-full"
@@ -17,7 +17,7 @@ const UserProfileSection = ({ user }: UserProfileSectionProps) => {
           <p>({user.email ?? '이메일 없음'})</p>
         </div>
       </div>
-      <div className="mr-4 flex h-full flex-col justify-evenly">
+      <div className="mr-4 flex h-40 flex-col justify-evenly">
         <Button color="primary" variant="outlined">
           주소록 관리
         </Button>
