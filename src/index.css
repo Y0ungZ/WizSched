@@ -45,4 +45,10 @@
     justify-content: center;
     align-items: center;
   }
+  .textShadowYellow {
+    text-shadow: #f2ec67 1px 0 10px;
+  }
+  .textShadow {
+    text-shadow: #a6a6a6 1px 0 10px;
+  }
 }
