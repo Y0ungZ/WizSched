@@ -1,6 +1,6 @@
 import { ReactNode } from 'react';
 
-const Button = ({ variant, color, onClick, children }: ButtonProps) => {
+const Button = ({ variant, color, onClick, ariaLabel, children }: ButtonProps) => {
   const colorClass: Record<ColorType, string> = {
     primary: 'text-navy bg-navy',
     secondary: 'text-gray bg-gray',
@@ -17,6 +17,7 @@ const Button = ({ variant, color, onClick, children }: ButtonProps) => {
     <button
       className={`border-2 px-3 py-2 font-accent shadow-md ${colorClass[color]} ${variantClass[variant]}`}
       onClick={onClick}
+      aria-label={ariaLabel}
     >
       {children}
     </button>
@@ -29,8 +30,9 @@ type ColorType = 'primary' | 'secondary' | 'success' | 'error';
 interface ButtonProps {
   variant: VariantType;
   color: ColorType;
-  children: ReactNode;
   onClick?: React.MouseEventHandler<HTMLButtonElement>;
+  ariaLabel?: string;
+  children: ReactNode;
 }
 
 export default Button;
