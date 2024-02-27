@@ -1,6 +1,6 @@
 import Button from '@/components/button/Button';
 import Calendar from '@/components/calendar/Calendar';
-import UserProfileSection from '@/components/sections/UserProfileSection';
+import UserProfileSection from '@/components/section/UserProfileSection';
 import { useAuthContext } from '@/contexts/AuthProvider';
 
 const MainPage = () => {
