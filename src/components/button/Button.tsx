@@ -1,4 +1,4 @@
-import { ReactNode } from 'react';
+import { PropsWithChildren } from 'react';
 
 const Button = ({ variant, color, onClick, ariaLabel, children }: ButtonProps) => {
   const colorClass: Record<ColorType, string> = {
@@ -27,12 +27,11 @@ const Button = ({ variant, color, onClick, ariaLabel, children }: ButtonProps) =
 type VariantType = 'contained' | 'outlined';
 type ColorType = 'primary' | 'secondary' | 'success' | 'error';
 
-interface ButtonProps {
+interface ButtonProps extends PropsWithChildren {
   variant: VariantType;
   color: ColorType;
   onClick?: React.MouseEventHandler<HTMLButtonElement>;
   ariaLabel?: string;
-  children: ReactNode;
 }
 
 export default Button;
