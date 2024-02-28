@@ -44,11 +44,11 @@ const useCalendar = (): CalendarProps => {
   };
 
   const prevMonth = () => {
-    setCurrentDate(subMonths(new Date(getYear(currentDate), getMonth(currentDate), 1), 1));
+    setCurrentDate(subMonths(new Date(currentDate), 1));
   };
 
   const nextMonth = () => {
-    setCurrentDate(addMonths(new Date(getYear(currentDate), getMonth(currentDate), 1), 1));
+    setCurrentDate(addMonths(new Date(currentDate), 1));
   };
 
   return {
