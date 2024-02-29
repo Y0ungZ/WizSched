@@ -1,5 +1,6 @@
 import { Session, User } from '@supabase/supabase-js';
 import { PropsWithChildren, createContext, useContext, useEffect, useState } from 'react';
+import { setAccessToken } from '@/apis/axiosInstance';
 import supabase from '@/apis/supabaseClient';
 
 const AuthContext = createContext<AuthContextProps>({
@@ -20,11 +21,13 @@ const AuthProvider = ({ children }: PropsWithChildren) => {
       if (event === 'SIGNED_IN' || event === 'TOKEN_REFRESHED') {
         setSession(session);
         setUser(session?.user || null);
+        setAccessToken(session?.provider_token || null);
       }
 
       if (event === 'SIGNED_OUT') {
         setSession(null);
         setUser(null);
+        setAccessToken(null);
       }
     });
 
