@@ -14,6 +14,12 @@ export default defineConfig(({ mode }) => {
     define: {
       'process.env.VITE_SUPABASE_URL': JSON.stringify(env.VITE_SUPABASE_URL),
       'process.env.VITE_SUPABASE_KEY': JSON.stringify(env.VITE_SUPABASE_KEY),
+      'process.env.VITE_GOOGLE_CALENDAR_API_BASE_URL': JSON.stringify(
+        env.VITE_GOOGLE_CALENDAR_API_BASE_URL,
+      ),
+      'process.env.VITE_GOOGLE_CALENDAR_API_SCOPE': JSON.stringify(
+        env.VITE_GOOGLE_CALENDAR_API_SCOPE,
+      ),
     },
   };
 });
