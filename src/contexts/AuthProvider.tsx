@@ -22,12 +22,14 @@ const AuthProvider = ({ children }: PropsWithChildren) => {
         setSession(session);
         setUser(session?.user || null);
         setAccessToken(session?.provider_token || null);
+        return;
       }
 
       if (event === 'SIGNED_OUT') {
         setSession(null);
         setUser(null);
         setAccessToken(null);
+        return;
       }
     });
 
