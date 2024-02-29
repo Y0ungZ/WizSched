@@ -17,6 +17,9 @@ export default defineConfig(({ mode }) => {
       'process.env.VITE_GOOGLE_CALENDAR_API_BASE_URL': JSON.stringify(
         env.VITE_GOOGLE_CALENDAR_API_BASE_URL,
       ),
+      'process.env.VITE_GOOGLE_CALENDAR_API_SCOPE': JSON.stringify(
+        env.VITE_GOOGLE_CALENDAR_API_SCOPE,
+      ),
     },
   };
 });

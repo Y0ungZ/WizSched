@@ -5,6 +5,7 @@ const useSupabaseAuth = (): AuthProps => {
     await supabase.auth.signInWithOAuth({
       provider: 'google',
       options: {
+        scopes: process.env.VITE_GOOGLE_CALENDAR_API_SCOPE,
         queryParams: {
           access_type: 'offline',
           prompt: 'consent',
