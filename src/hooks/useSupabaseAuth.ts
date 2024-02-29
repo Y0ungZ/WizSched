@@ -1,4 +1,4 @@
-import supabase from '@/api/supabaseClient';
+import supabase from '@/apis/supabaseClient';
 
 const useSupabaseAuth = (): AuthProps => {
   const logInWithGoogle = async () => {
