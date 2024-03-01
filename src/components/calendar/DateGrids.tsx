@@ -17,9 +17,9 @@ const DateGrids = ({ prevMonthDates, currMonthDates, nextMonthDates }: DateGrids
       {currMonthDates().map((el) => (
         <div
           key={el.toISOString()}
-          className={`font-semibold hover:bg-green hover:text-white ${isToday(el) && 'bg-yellow'} ${
-            isSaturday(el) && 'text-blue'
-          } ${isSunday(el) && 'text-red'} cursor-pointer`}
+          className={`font-semibold hover:bg-green hover:text-white ${
+            isToday(el) ? 'bg-yellow ' : ''
+          }${isSaturday(el) ? 'text-blue ' : ''}${isSunday(el) ? 'text-red ' : ''}cursor-pointer`}
         >
           {getDate(el)}
         </div>
