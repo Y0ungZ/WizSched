@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import Button from '@/components/button/Button';
-import { ROUTE_PATH } from '@/constants/path';
+import RoutePath from '@/constants/path';
 import { useAuthContext } from '@/contexts/AuthProvider';
 import useSupabaseAuth from '@/hooks/useSupabaseAuth';
 
@@ -10,7 +10,7 @@ const Header = () => {
 
   return (
     <div className="fixed top-0 z-10 flex h-10v min-h-16 w-full min-w-96 flex-row items-center justify-between bg-gray shadow-md">
-      <Link to={ROUTE_PATH.ROOT} aria-label="홈으로 가기">
+      <Link to={RoutePath.ROOT} aria-label="홈으로 가기">
         <div className="mx-5 cursor-pointer font-accent text-lg font-bold text-white shadow-black drop-shadow-md">
           0Z-board
         </div>
@@ -21,7 +21,7 @@ const Header = () => {
             로그아웃
           </Button>
         ) : (
-          <Link to={ROUTE_PATH.LOGIN}>
+          <Link to={RoutePath.LOGIN}>
             <Button variant="contained" color="secondary">
               로그인
             </Button>

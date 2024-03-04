@@ -9,10 +9,10 @@ const MonthNavigation = ({ date, prevMonth, nextMonth }: MonthNavigationProps) =
       <span className="basis-1/3 font-accent text-lg">{getYear(date)}년</span>
       <span className="basis-1/3 font-accent text-lg">{getMonth(date) + 1}월</span>
       <div className="basis-1/3">
-        <Button onClick={() => prevMonth()} variant="outlined" color="success" ariaLabel="이전 월">
+        <Button onClick={prevMonth} variant="outlined" color="success" ariaLabel="이전 월">
           <LeftArrow className="h-5 w-5 text-green" aria-hidden="true" />
         </Button>
-        <Button onClick={() => nextMonth()} variant="outlined" color="success" ariaLabel="다음 월">
+        <Button onClick={nextMonth} variant="outlined" color="success" ariaLabel="다음 월">
           <RightArrow className="h-5 w-5 text-green" aria-hidden="true" />
         </Button>
       </div>

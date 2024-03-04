@@ -1,4 +1,6 @@
-export const ROUTE_PATH = Object.freeze({
-  ROOT: '/',
-  LOGIN: 'login',
-});
+enum RoutePath {
+  ROOT = '/',
+  LOGIN = 'login',
+}
+
+export default RoutePath;
