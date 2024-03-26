@@ -1,6 +1,6 @@
 import supabase from '@/apis/supabaseClient';
 
-const useSupabaseAuth = (): AuthProps => {
+const useSupabaseAuth = (): AuthResult => {
   const logInWithGoogle = async () => {
     await supabase.auth.signInWithOAuth({
       provider: 'google',
@@ -21,7 +21,7 @@ const useSupabaseAuth = (): AuthProps => {
   return { logInWithGoogle, logOutWithGoogle };
 };
 
-interface AuthProps {
+interface AuthResult {
   logInWithGoogle: () => Promise<void>;
   logOutWithGoogle: () => Promise<void>;
 }

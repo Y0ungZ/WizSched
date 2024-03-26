@@ -11,7 +11,7 @@ import {
 } from 'date-fns';
 import { useState } from 'react';
 
-const useCalendar = (): CalendarProps => {
+const useCalendar = (): CalendarResult => {
   const [currentDate, setCurrentDate] = useState(new Date());
 
   const firstDayOfMonth = () => {
@@ -63,7 +63,7 @@ const useCalendar = (): CalendarProps => {
   };
 };
 
-interface CalendarProps {
+interface CalendarResult {
   currentDate: Date;
   firstDayOfMonth: () => Date;
   lastDayOfMonth: () => Date;

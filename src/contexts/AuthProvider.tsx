@@ -3,7 +3,7 @@ import { PropsWithChildren, createContext, useContext, useEffect, useState } fro
 import { setAccessToken } from '@/apis/axiosInstance';
 import supabase from '@/apis/supabaseClient';
 
-const AuthContext = createContext<AuthContextProps>({
+const AuthContext = createContext<AuthContextState>({
   user: null,
   session: null,
 });
@@ -46,7 +46,7 @@ const AuthProvider = ({ children }: PropsWithChildren) => {
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
 };
 
-interface AuthContextProps {
+interface AuthContextState {
   user: User | null;
   session: Session | null;
 }
