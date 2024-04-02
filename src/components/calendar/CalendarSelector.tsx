@@ -1,3 +1,4 @@
+import { QueryErrorResetBoundary } from '@tanstack/react-query';
 import { Suspense } from 'react';
 import { ErrorBoundary } from 'react-error-boundary';
 import ErrorFallback from '@/components/fallback/ErrorFallback';
@@ -13,12 +14,16 @@ const CalendarDropDown = () => {
 
 const CalendarSelector = () => {
   return (
-    <div>
-      <ErrorBoundary fallback={<ErrorFallback />}>
-        <Suspense fallback={<LoadingFallback />}>
-          <CalendarDropDown />
-        </Suspense>
-      </ErrorBoundary>
+    <div className="py-4">
+      <QueryErrorResetBoundary>
+        {({ reset }) => (
+          <ErrorBoundary onReset={reset} FallbackComponent={ErrorFallback}>
+            <Suspense fallback={<LoadingFallback />}>
+              <CalendarDropDown />
+            </Suspense>
+          </ErrorBoundary>
+        )}
+      </QueryErrorResetBoundary>
     </div>
   );
 };
