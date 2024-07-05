@@ -1,10 +1,10 @@
-# 0Z-board
+# WizSched
 
 OpenAPI를 활용한 프로젝트입니다.
 
 ## 목차
 
-- [0Z-board](#0z-board)
+- [WizSched](#wizsched)
   - [목차](#목차)
   - [Commit 컨벤션](#commit-컨벤션)
   - [React + TypeScript + Vite](#react--typescript--vite)

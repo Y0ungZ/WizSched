@@ -1,4 +1,4 @@
-name: 0Z-board dev CI
+name: WizSched dev CI
 on:
   pull_request:
     branches: ['develop']
