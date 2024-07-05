@@ -12,7 +12,7 @@ const Header = () => {
     <div className="fixed top-0 z-10 flex h-10v min-h-16 w-full min-w-96 flex-row items-center justify-between bg-gray shadow-md">
       <Link to={RoutePath.ROOT} aria-label="홈으로 가기">
         <div className="mx-5 cursor-pointer font-accent text-lg font-bold text-white shadow-black drop-shadow-md">
-          0Z-board
+         WizSched
         </div>
       </Link>
       <div className="mx-5">

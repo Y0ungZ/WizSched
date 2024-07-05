@@ -8,7 +8,7 @@ const LoginPage = () => {
     <div className="headerMarginContainer bg-black">
       <div className="flex h-4/5 w-9/12 flex-col items-center justify-center rounded bg-white text-center shadow-xl shadow-green">
         <h1 className="my-8 font-accent text-2xl text-navy drop-shadow-md">로그인</h1>
-        <p>로그인하고 0Z-board를 이용해보세요.</p>
+        <p>로그인하고 WizSched를 이용해보세요.</p>
         <button
           onClick={logInWithGoogle}
           className="my-8 h-10 rounded border border-gray bg-white shadow-md hover:bg-google-blue hover:text-white "
