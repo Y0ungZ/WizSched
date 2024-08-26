@@ -5,7 +5,6 @@ import {
   PointerSensor,
   useSensor,
   useSensors,
-  UniqueIdentifier,
   DragEndEvent,
   DragStartEvent,
   DragOverlay,
@@ -13,7 +12,7 @@ import {
 } from '@dnd-kit/core';
 import { arrayMove, sortableKeyboardCoordinates } from '@dnd-kit/sortable';
 import { useState } from 'react';
-import { ContainerType } from '@/constants/task';
+import { ContainerType, EventType } from '@/constants/task';
 import SortableContainer from './SortableContainer';
 import { Item } from './SortableItem';
 
@@ -25,6 +24,7 @@ const DragDropBoard = () => {
     }),
   );
 
+  const [activeId, setActiveId] = useState<string | null>(null);
   const [items, setItems] = useState<ContainerType>({
     backlog: [
       {
@@ -75,13 +75,10 @@ const DragDropBoard = () => {
       },
     ],
   });
-
-  const [activeId, setActiveId] = useState<UniqueIdentifier | null>(null);
-
   const handleDragStart = (event: DragStartEvent) => {
     const { active } = event;
 
-    setActiveId(active.id);
+    setActiveId(String(active.id));
   };
 
   const handleDragCancel = () => setActiveId(null);
@@ -168,12 +165,12 @@ const DragDropBoard = () => {
   };
 
   const moveBetweenContainers = (
-    items,
-    activeContainer,
-    activeIndex,
-    overContainer,
-    overIndex,
-    item,
+    items: ContainerType,
+    activeContainer: string,
+    activeIndex: number,
+    overContainer: string,
+    overIndex: number,
+    item: EventType,
   ) => {
     return {
       ...items,

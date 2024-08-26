@@ -1,4 +1,3 @@
-import { UniqueIdentifier } from '@dnd-kit/core';
 import { useSortable } from '@dnd-kit/sortable';
 import { CSS } from '@dnd-kit/utilities';
 import { PropsWithChildren } from 'react';
@@ -42,12 +41,12 @@ const SortableItem = ({ id, children }: SortableItemProps) => {
 };
 
 interface ItemProps extends PropsWithChildren {
-  id: UniqueIdentifier;
+  id: string;
   dragOverlay: boolean;
 }
 
 interface SortableItemProps extends PropsWithChildren {
-  id: UniqueIdentifier;
+  id: string;
 }
 
 export { Item, SortableItem };

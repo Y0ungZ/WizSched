@@ -1,6 +1,7 @@
 import { useDroppable } from '@dnd-kit/core';
 import { SortableContext, verticalListSortingStrategy } from '@dnd-kit/sortable';
 import { PropsWithChildren } from 'react';
+import { EventType } from '@/constants/task';
 import { SortableItem } from './SortableItem';
 
 const SortableContainer = ({ id, items }: SortableContainerProps) => {
@@ -8,8 +9,10 @@ const SortableContainer = ({ id, items }: SortableContainerProps) => {
 
   const isOverClass = isOver ? 'text-amber-500' : 'text-black';
 
+  const itemIds = items.map((item) => item.id);
+
   return (
-    <SortableContext id={id} items={items} strategy={verticalListSortingStrategy}>
+    <SortableContext id={id} items={itemIds} strategy={verticalListSortingStrategy}>
       <ul ref={setNodeRef} className={`${isOverClass}`}>
         <span>{id}</span>
         {items.map((item) => (
@@ -24,8 +27,7 @@ const SortableContainer = ({ id, items }: SortableContainerProps) => {
 
 interface SortableContainerProps extends PropsWithChildren {
   id: string;
-  // TODO : 데이터 타입 명시 필요
-  items: any;
+  items: EventType[];
 }
 
 export default SortableContainer;
