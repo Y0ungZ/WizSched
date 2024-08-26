@@ -52,4 +52,7 @@
   .textShadow {
     text-shadow: #a6a6a6 1px 0 10px;
   }
+  .textShadowOrange {
+    text-shadow: #fdb35c 1px 0 10px;
+  }
 }
