@@ -14,12 +14,12 @@ const MainPage = () => {
       </div>
       <section className="my-4 h-fit w-9/12 flex-col items-center justify-center rounded bg-white py-4 text-center shadow-xl shadow-green">
         <Calendar />
-        <Button variant="contained" color="primary">
-          만들기
-        </Button>
       </section>
       <section className="my-4 h-fit w-9/12 flex-col items-center justify-center rounded bg-white py-4 text-center shadow-xl shadow-green">
-        <h2 className="textShadowOrange mb-3 font-accent text-2xl text-red">이번 주 할 일</h2>
+        <h2 className="textShadowOrange mb-3 font-accent text-2xl text-red">할 일</h2>
+        <Button variant="outlined" color="success">
+          만들기
+        </Button>
         {/* TODO : 로그인 필요하도록 바꿔야 함 */}
         {/* {user ? <DragDropBoard /> : <span>로그인이 필요합니다.</span>} */}
         <DragDropBoard />
